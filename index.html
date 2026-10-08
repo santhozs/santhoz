@@ -1,0 +1,357 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Dr. Sumathi Hospital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap">
+<style>
+/* Layout: 80px frosted header; 45/55 full-window hero; centred quote over a centre-line timeline that fills cerulean on scroll; asymmetric pillars; 12-col bento reviews; midnight monolith footer. */
+:root{
+  --bg:#ffffff;
+  --soft:#f8fafc;
+  --tint:#f1f5f9;
+  --midnight:#0f172a;
+  --ink:#0f172a;
+  --body:#475569;
+  --edge:#e2e8f0;
+  --edge-strong:#cbd5e1;
+  --cerulean:#0284c7;
+  --cerulean-hover:#0369a1;
+  --cerulean-text:#0369a1;
+  --on-cerulean:#ffffff;
+  --emerald:#10b981;
+  --emerald-text:#047857;
+  --glass:rgba(255,255,255,.7);
+  --logo-chip:transparent;
+  --head:'Plus Jakarta Sans','Inter',system-ui,sans-serif;
+  --font:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1220;--soft:#111b2e;--tint:#16233a;--ink:#f1f5f9;--body:#aebbd0;--edge:#22314a;--edge-strong:#33445f;
+  --cerulean:#38bdf8;--cerulean-hover:#7dd3fc;--cerulean-text:#7dd3fc;--on-cerulean:#06223a;--emerald-text:#6ee7b7;
+  --glass:rgba(11,18,32,.7);--logo-chip:#ffffff;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1220;--soft:#111b2e;--tint:#16233a;--ink:#f1f5f9;--body:#aebbd0;--edge:#22314a;--edge-strong:#33445f;
+  --cerulean:#38bdf8;--cerulean-hover:#7dd3fc;--cerulean-text:#7dd3fc;--on-cerulean:#06223a;--emerald-text:#6ee7b7;
+  --glass:rgba(11,18,32,.7);--logo-chip:#ffffff;color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:6rem}
+body{background:var(--bg);color:var(--body);font-family:var(--font);font-size:1rem;line-height:1.6;overflow-x:hidden}
+h1,h2,h3{font-family:var(--head);color:var(--ink);margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--cerulean);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:80rem;margin-inline:auto;padding-inline:1rem}
+.skip{position:absolute;left:-999px;top:0;background:var(--midnight);color:#fff;padding:.6rem 1rem;z-index:60}
+.skip:focus{left:1rem;top:1rem}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cerulean-text)}
+h2{font-size:clamp(1.9rem,3.4vw,2.5rem);font-weight:700;letter-spacing:-.02em;line-height:1.15}
+.sec-head{display:grid;gap:.7rem;margin-bottom:3rem;max-width:40rem}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:16px 32px;border-radius:12px;font-family:var(--font);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;cursor:pointer;border:1px solid transparent;transition:background .2s,box-shadow .2s,color .2s}
+.btn-primary{background:var(--cerulean);color:var(--on-cerulean)}
+.btn-primary:hover{background:var(--cerulean-hover);box-shadow:0 20px 25px -5px rgba(2,132,199,.15)}
+.btn-secondary{background:transparent;border-color:var(--edge-strong);color:var(--ink)}
+.btn-secondary:hover{background:var(--tint)}
+@media (max-width:420px){.btn{padding:14px 22px;width:100%}}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--glass);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-bottom:1px solid var(--edge)}
+.top .wrap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1rem;min-height:80px}
+.logo{display:block;justify-self:start;background:var(--logo-chip);border-radius:10px;padding:2px 6px}
+.logo img{display:block;height:46px;width:auto;max-width:100%}
+nav ul{display:flex;align-items:center;list-style:none;margin:0;padding:0}
+nav li+li::before{content:"•";color:var(--edge-strong);padding-inline:.15rem}
+nav li{display:flex;align-items:center}
+nav a{display:block;padding:.55rem 1.1rem;text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);border-radius:8px;transition:color .2s,background .2s}
+nav a:hover{color:var(--cerulean-text);background:var(--tint)}
+.phone-mod{justify-self:end;display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--ink)}
+.phone-mod .ic{width:2.5rem;height:2.5rem;border-radius:50%;background:var(--cerulean);color:var(--on-cerulean);display:grid;place-items:center;flex:none;transition:background .2s}
+.phone-mod:hover .ic{background:var(--cerulean-hover)}
+.phone-mod small{display:block;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-text);line-height:1.2}
+.phone-mod b{display:block;font-family:var(--head);font-size:1.15rem;font-weight:800;line-height:1.2;white-space:nowrap}
+@media (max-width:900px){
+  .top .wrap{grid-template-columns:1fr auto;gap:0 1rem;padding-block:.4rem;min-height:72px}
+  .logo img{height:38px}
+  nav{grid-column:1/-1;grid-row:2;overflow-x:auto;margin-inline:-.5rem;padding-bottom:.25rem}
+  nav ul{width:max-content}
+  nav a{padding:.45rem .7rem;font-size:.74rem;letter-spacing:.1em}
+  .phone-mod small{display:none}
+}
+
+/* banner + intro */
+.banner{padding-block:1.25rem 0}
+.banner img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:24px;box-shadow:0 40px 80px -30px rgba(15,23,42,.35),0 0 0 1px var(--edge)}
+.hero{padding-block:clamp(2.5rem,5vw,4.5rem)}
+.hero-copy{display:grid;grid-template-columns:45fr 55fr;column-gap:clamp(1.5rem,4vw,4rem);row-gap:1.5rem;align-items:start;min-width:0}
+.hero-copy>*{min-width:0;justify-self:start}
+.live{grid-column:1/-1;display:inline-flex;align-items:center;gap:.6rem;padding:.5rem 1rem .5rem .8rem;border-radius:999px;background:var(--bg);border:1px solid var(--emerald);box-shadow:0 0 0 4px rgba(16,185,129,.1);font-size:.88rem;font-weight:600;color:var(--emerald-text)}
+.live i{width:.6rem;height:.6rem;border-radius:50%;background:var(--emerald);box-shadow:0 0 0 3px rgba(16,185,129,.25);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(16,185,129,.06)}}
+.hero h1{grid-column:1;grid-row:2/4;font-size:clamp(2.4rem,5.2vw,4.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.1}
+.hero p.sub{grid-column:2;grid-row:2;font-size:1.1rem;max-width:34rem}
+.cta{grid-column:2;grid-row:3;display:flex;gap:.8rem;flex-wrap:wrap}
+@media (max-width:900px){
+  .hero-copy{grid-template-columns:1fr}
+  .hero h1,.hero p.sub,.cta{grid-column:1;grid-row:auto}
+}
+
+/* director */
+.dir{padding-block:clamp(4rem,10vw,10rem);background:var(--soft);border-block:1px solid var(--edge)}
+.dir .wrap{display:grid;justify-items:center;text-align:center}
+.dir blockquote{margin:0;max-width:62rem}
+.dir blockquote p{font-family:var(--head);font-weight:600;color:var(--ink);font-size:clamp(1.55rem,3.8vw,3rem);line-height:1.25;letter-spacing:-.025em}
+.dir blockquote p::before{content:"\201C";display:block;font-size:6rem;line-height:.6;color:var(--cerulean);margin-bottom:1.4rem}
+.dir footer{margin-top:2rem;display:grid;gap:.2rem}
+.dir footer b{font-family:var(--head);font-size:1.1rem;color:var(--ink)}
+.dir footer span{font-size:.95rem}
+.tl-head{margin-top:clamp(4rem,8vw,7rem);margin-bottom:3rem;display:grid;gap:.6rem;justify-items:center}
+.tl{position:relative;width:100%;max-width:56rem;list-style:none;margin:0;padding:0;display:grid;gap:3.5rem;text-align:left}
+.tl::before,.tl::after{content:"";position:absolute;left:50%;top:0;width:4px;margin-left:-2px;border-radius:4px}
+.tl::before{bottom:0;background:var(--edge-strong)}
+.tl::after{height:var(--fill,0px);background:linear-gradient(180deg,#38bdf8,#0284c7 60%,#0369a1);transition:height .2s linear}
+.tl li{position:relative;display:grid;grid-template-columns:1fr 1fr;column-gap:4rem}
+.tl li::before{content:"";position:absolute;left:50%;top:.3rem;width:1.5rem;height:1.5rem;margin-left:-.75rem;border-radius:50%;background:var(--bg);border:4px solid var(--edge-strong);z-index:1;transition:.3s}
+.tl .c{grid-column:2;color:var(--body);transition:color .3s}
+.tl li:nth-child(odd) .c{grid-column:1;text-align:right}
+.tl .yr{display:block;font-family:var(--head);font-weight:800;font-size:2.2rem;line-height:1;margin-bottom:.5rem;color:var(--edge-strong);transition:color .3s;letter-spacing:-.02em}
+.tl li.on::before{background:var(--cerulean);border-color:var(--cerulean);box-shadow:0 0 0 7px rgba(2,132,199,.18)}
+.tl li.on .yr{color:var(--cerulean-text)}
+.tl li.on .c{color:var(--ink)}
+@media (max-width:700px){
+  .tl::before,.tl::after{left:.75rem}
+  .tl li{grid-template-columns:1fr;padding-left:2.8rem}
+  .tl li::before{left:.75rem}
+  .tl .c,.tl li:nth-child(odd) .c{grid-column:1;text-align:left}
+}
+
+/* pillars */
+.pillars{padding-block:clamp(4rem,8vw,7rem)}
+.pgrid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:1.5rem;align-items:start}
+.card{background:#fff;color:#475569;border:1px solid var(--edge);border-radius:24px;padding:2rem;display:grid;gap:.9rem;min-width:0;transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
+:root[data-theme="dark"] .card{background:var(--soft);color:var(--body)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .card{background:var(--soft);color:var(--body)}}
+.card:hover{transform:translateY(-8px);box-shadow:0 24px 40px -16px rgba(2,132,199,.28);border-color:var(--cerulean)}
+.card:nth-child(1){padding-block:2.8rem}
+.card:nth-child(2){margin-top:2.5rem}
+.card .ic{width:3.2rem;height:3.2rem;border-radius:14px;background:var(--tint);color:var(--cerulean-text);display:grid;place-items:center}
+.card h3{font-size:1.3rem;font-weight:700;letter-spacing:-.015em;line-height:1.25}
+.card:nth-child(1) h3{font-size:1.6rem}
+@media (max-width:900px){.pgrid{grid-template-columns:1fr}.card:nth-child(2){margin-top:0}.card:nth-child(1){padding-block:2rem}}
+.pillars{background:var(--bg)}
+
+/* specialities */
+.spec-sec{padding-block:clamp(3rem,6vw,5rem);background:var(--soft);border-block:1px solid var(--edge)}
+.spec{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.spec>*{min-width:0}
+.spec .sec-head{margin-bottom:2rem}
+.chips{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.chips li{display:flex;gap:.7rem;align-items:center;background:var(--bg);border:1px solid var(--edge);border-radius:14px;padding:.9rem 1rem;font-weight:600;color:var(--ink);transition:border-color .2s,background .2s}
+.chips li:hover{border-color:var(--cerulean);background:var(--tint)}
+.chips svg{flex:none;color:var(--cerulean-text)}
+.spec-img{display:grid;grid-template-columns:1.4fr 1fr;gap:.75rem}
+.spec-img img{width:100%;height:100%;min-height:15rem;object-fit:cover;border-radius:24px;display:block}
+@media (max-width:900px){.spec{grid-template-columns:1fr}}
+@media (max-width:480px){.chips{grid-template-columns:1fr}}
+
+/* bento */
+.reviews{padding-block:clamp(4rem,8vw,7rem)}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
+.r{margin:0;background:var(--soft);border:1px solid var(--edge);border-radius:24px;padding:2rem;display:flex;flex-direction:column;gap:1.4rem;min-width:0;transition:transform .3s,box-shadow .3s}
+.r:hover{transform:translateY(-4px);box-shadow:0 20px 36px -18px rgba(15,23,42,.3)}
+.r-a{grid-column:span 7;grid-row:span 2;padding:clamp(2rem,4vw,3.2rem);justify-content:space-between}
+.r-b{grid-column:span 5}
+.r-c{grid-column:span 5}
+.r .out{display:inline-flex;align-self:flex-start;align-items:center;gap:.45rem;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald-text);background:rgba(16,185,129,.12);border-radius:999px;padding:.3rem .8rem}
+.r blockquote{margin:0}
+.r blockquote p{color:var(--ink)}
+.r-a blockquote p{font-family:var(--head);font-weight:600;font-size:clamp(1.3rem,2.6vw,1.9rem);line-height:1.4;letter-spacing:-.015em}
+.r figcaption{display:flex;align-items:center;gap:.9rem;margin-top:auto;font-weight:600;color:var(--ink)}
+.av{width:3.4rem;height:3.4rem;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--head);font-weight:800;font-size:1.2rem;color:#fff;background:linear-gradient(145deg,#38bdf8,#0369a1);box-shadow:inset 0 3px 8px rgba(15,23,42,.35),0 0 0 3px var(--bg),0 0 0 4px var(--edge-strong)}
+.r:nth-child(2) .av{background:linear-gradient(145deg,#34d399,#047857)}
+.r:nth-child(3) .av{background:linear-gradient(145deg,#64748b,#0f172a)}
+.r figcaption small{display:block;font-weight:500;font-size:.82rem;color:var(--body)}
+@media (max-width:900px){.r-a,.r-b,.r-c{grid-column:span 12;grid-row:auto}}
+
+/* footer */
+footer.mono{background:#0f172a;color:#cbd5e1}
+.mono .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:clamp(2rem,6vw,6rem);padding-block:clamp(3.5rem,8vw,7rem)}
+.mono .wrap>*{min-width:0}
+.mono .big{font-family:var(--head);font-weight:800;color:#fff;font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.02;letter-spacing:-.035em}
+.mono .live{background:transparent;color:#6ee7b7;margin-bottom:1.6rem;border-color:#10b981}
+.mono .line{display:inline-block;margin-top:2rem;font-family:var(--head);font-weight:800;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;text-decoration:none;letter-spacing:-.02em;border-bottom:3px solid #0284c7;transition:color .2s,border-color .2s}
+.mono .line:hover{color:#7dd3fc;border-color:#7dd3fc}
+.mono .lbl{display:block;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:#7dd3fc;font-weight:600;margin-bottom:.8rem}
+.cols{display:grid;gap:0;align-content:center}
+.cols>div{padding-block:1.6rem;border-top:1px solid rgba(255,255,255,.14)}
+.cols>div:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
+.cols address{font-style:normal;font-size:1.1rem;color:#fff;line-height:1.6}
+.cols .v{font-size:1.1rem;color:#fff}
+.legal{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.14);padding:1.2rem 1rem;text-align:center;font-size:.82rem;color:#94a3b8}
+@media (max-width:900px){.mono .wrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#home" aria-label="Dr. Sumathi Hospital, home"><img src="img/logo.png" alt="Dr. Sumathi Hospital, since 1990" width="1400" height="288"></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#specialities">Specialities</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+      </ul>
+    </nav>
+    <a class="phone-mod" href="tel:+919087144000" aria-label="Call 90871 44000">
+      <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></span>
+      <span><small>Open 24/7</small><b>90871 44000</b></span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="banner" id="home">
+    <div class="wrap">
+      <img src="img/banner.jpg" alt="Banner: Healthcare Comes to You. A smiling nurse in blue scrubs sits with an elderly woman at home. Compassionate home healthcare services for a healthier, happier tomorrow." width="1600" height="900" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="live"><i aria-hidden="true"></i>Open 24/7 for Emergencies &amp; OPD</span>
+        <h1>Compassionate care, close to home.</h1>
+        <p class="sub">Dr. Sumathi Hospital brings trusted multi-speciality care to Chinna Thadagam — from routine check-ups to cardiac, orthopaedic and maternity care, backed by doctors your family already knows.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Book Appointment Now</a>
+          <a class="btn btn-secondary" href="#contact">Contact Trauma Unit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dir" id="about">
+    <div class="wrap">
+      <span class="eyebrow" style="margin-bottom:2rem">A message from our Medical Director</span>
+      <blockquote>
+        <p>We built this hospital to feel like an extension of the neighbourhood it serves. Every specialist here understands that trust is earned one visit, one follow-up call, and one honest conversation at a time.</p>
+        <footer><b>Dr. Sumathi — Founder &amp; Medical Director</b><span>MBBS, MD (General Medicine)</span></footer>
+      </blockquote>
+
+      <div class="tl-head"><span class="eyebrow">Our milestones</span><h2>Three decades beside the community</h2></div>
+      <ol class="tl" id="tl">
+        <li><div class="c"><span class="yr">1990</span>Founded as a general clinic on Thudiyalur Road.</div></li>
+        <li><div class="c"><span class="yr">2011</span>Expanded into multi-speciality care (Cardiology, orthopaedics, and gynaecology).</div></li>
+        <li><div class="c"><span class="yr">2016</span>National Accreditation milestone achieved.</div></li>
+        <li><div class="c"><span class="yr">Today</span>A trusted pillar serving 500K+ patients across the district.</div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="pillars" id="why">
+    <div class="wrap">
+      <div class="sec-head"><h2>Why Choose Dr. Sumathi Hospital</h2></div>
+      <div class="pgrid">
+        <article class="card">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Accredited, standards-led care</h3>
+          <p>Our protocols follow national accreditation guidelines across every department.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"/><path d="M2 21c0-3.9 3.1-6.500 7-6.500"/><path d="m15 18 2 2 5-5"/></svg></div>
+          <h3>Continuity with the same doctor</h3>
+          <p>Chronic-care patients are scheduled with the same specialist wherever possible.</p>
+        </article>
+        <article class="card">
+          <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h4l2-6 4 12 2-6h6"/></svg></div>
+          <h3>Modern diagnostic equipment</h3>
+          <p>On-site lab and imaging mean fewer referrals and faster answers.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="spec-sec" id="specialities">
+    <div class="wrap spec">
+      <div>
+        <div class="sec-head"><span class="eyebrow">Specialities</span><h2>One hospital for the whole family</h2></div>
+        <ul class="chips">
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.800 5.600a5.200 5.200 0 0 0-7.400 0L12 7l-1.400-1.400a5.200 5.200 0 0 0-7.400 7.400L12 21.800l8.800-8.800a5.200 5.200 0 0 0 0-7.400z"/></svg>Cardiac Care</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4l4 4M4 5l4 4M15 15l5 5M16 14l5 5M8 8l8 8"/></svg>Orthopaedics</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="7" r="3.500"/><path d="M12 10.500c-4 0-6 2.500-6 5.500h12c0-3-2-5.500-6-5.500zM9 16v5M15 16v5"/></svg>Maternity &amp; Gynaecology</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3C4.500 3 3 5 3 7.500c0 2 1 3 1.500 5S5 21 7.300 21c1.800 0 1.700-4 4.700-4s2.900 4 4.700 4c2.300 0 2.800-6.500 3.300-8.500S21 9.500 21 7.500C21 5 19.500 3 17 3c-2 0-3 1-5 1S9 3 7 3z"/></svg>Dentistry</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3v6a4 4 0 0 0 8 0V3M10 13v3a5 5 0 0 0 10 0v-2"/><circle cx="20" cy="12" r="2"/></svg>Routine Check-ups</li>
+          <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5.500 9.500A2 2 0 0 0 6.200 21h11.600a2 2 0 0 0 1.700-2.500L14 9V3"/></svg>Lab &amp; Imaging</li>
+        </ul>
+      </div>
+      <div class="spec-img">
+        <img src="img/surgery.jpg" alt="Surgeons operating in a modern operating theatre" loading="lazy">
+        <img src="img/lab.jpg" alt="A technician working at a microscope in the hospital laboratory" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="testimonials">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Testimonials</span><h2>Feedback submitted by Patients</h2></div>
+      <div class="bento">
+        <figure class="r r-a">
+          <span class="out">Maternity care</span>
+          <blockquote><p>“The maternity and gynecological care at Dr. Sumathi Hospital is unmatched. Dr. Sumathi and her team provided exceptional support, making my pregnancy journey safe, smooth, and memorable. Thank you for the wonderful care!”</p></blockquote>
+          <figcaption><span class="av" aria-hidden="true">G</span><span>Guna Chandhru<small>Patient</small></span></figcaption>
+        </figure>
+        <figure class="r r-b">
+          <span class="out">Family trust</span>
+          <blockquote><p>“Choosing Dr. Sumathi Hospital was the best decision for my family’s healthcare needs. The doctors are incredibly knowledgeable, and the staff treats you like family. A truly world-class healthcare experience.”</p></blockquote>
+          <figcaption><span class="av" aria-hidden="true">A</span><span>Annapoorani S<small>Patient</small></span></figcaption>
+        </figure>
+        <figure class="r r-c">
+          <span class="out">Infrastructure</span>
+          <blockquote><p>“I am thoroughly impressed by the advanced medical infrastructure and cleanliness at Dr. Sumathi Hospital. The clinical team provided a seamless diagnosis and highly effective treatment plan. A benchmark for modern healthcare.”</p></blockquote>
+          <figcaption><span class="av" aria-hidden="true">J</span><span>Jeyanthi Mathan<small>Patient</small></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="mono" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="live"><i aria-hidden="true"></i>Open 24/7 for Emergencies &amp; OPD</span>
+      <h2 class="big">24/7 Immediate Response Center</h2>
+      <a class="line" href="tel:+919087144000">90871 44000</a>
+    </div>
+    <div class="cols">
+      <div><span class="lbl">Address</span><address>321-A Thudiyalur Road,<br>Chinnathadagam,<br>Coimbatore, Tamil Nadu – 641108</address></div>
+      <div><span class="lbl">Phone</span><p class="v">90871 44000</p></div>
+      <div><span class="lbl">Hours</span><p class="v">Open 24/7 for Emergencies &amp; OPD</p></div>
+    </div>
+  </div>
+  <p class="legal">© Dr. Sumathi Hospital · Since 1990 · Chinnathadagam, Coimbatore</p>
+</footer>
+
+<script>
+(function(){
+  var tl=document.getElementById('tl'),lis=[].slice.call(tl.children),ticking=false;
+  function update(){
+    ticking=false;
+    var line=window.innerHeight*.6,top=tl.getBoundingClientRect().top,fill=0;
+    lis.forEach(function(li){
+      var r=li.getBoundingClientRect(),on=r.top<line;
+      li.classList.toggle('on',on);
+      if(on)fill=r.top-top+14;
+    });
+    tl.style.setProperty('--fill',Math.max(0,Math.min(fill,tl.offsetHeight))+'px');
+  }
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
+  window.addEventListener('resize',update);
+  update();
+})();
+</script>
+
+</body></html>
